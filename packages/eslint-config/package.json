@@ -1,6 +1,6 @@
 {
   "name": "@webdivision/eslint-config",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ESLint and Prettier Config from WebDivision",
   "keywords": [
     "javascript",
@@ -18,20 +18,20 @@
   "author": "Konrad Turczyński <konrad@turczynski.dev>",
   "license": "MIT",
   "peerDependencies": {
+    "eslint": "5.x",
     "eslint-config-prettier": "4.x",
     "eslint-config-react-app": "4.x",
     "eslint-plugin-prettier": "3.x",
     "eslint-plugin-react": "7.x",
-    "prettier": "1.x",
-    "eslint": "5.x"
+    "prettier": "1.x"
   },
   "devDependencies": {
+    "eslint": "5.x",
     "eslint-config-prettier": "4.x",
     "eslint-config-react-app": "4.x",
     "eslint-plugin-prettier": "3.x",
     "eslint-plugin-react": "7.x",
-    "prettier": "1.x",
-    "eslint": "5.x"
+    "prettier": "1.x"
   },
   "scripts": {
     "format": "prettier --write '**/*.js'",
