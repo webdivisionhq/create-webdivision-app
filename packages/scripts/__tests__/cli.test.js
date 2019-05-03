@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const cli = require('../lib/cli');
+const cli = require("../lib/cli");
 
-describe('scripts cli', () => {
+describe("scripts cli", () => {
   // const argv = cli(cwd).parse(['args']);
-  it('needs tests');
+  it("needs tests");
 });

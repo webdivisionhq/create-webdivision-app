@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const yargs = require('yargs/yargs');
-const script = require('./index');
+const factory = require("yargs/yargs");
+const script = require("./index");
 
 function cli(cwd) {
   const parser = factory(null, cwd);
 
-  parser.alias('h', 'help');
-  parser.alias('v', 'version');
+  parser.alias("h", "help");
+  parser.alias("v", "version");
 
   parser.usage(
     "$0",
