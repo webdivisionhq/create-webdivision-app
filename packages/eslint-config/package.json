@@ -11,9 +11,6 @@
     "prettier"
   ],
   "main": "index.js",
-  "bin": {
-    "wd": "./bin/wd-scripts.js"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -52,13 +49,5 @@
       "eslint",
       "git add"
     ]
-  },
-  "dependencies": {
-    "cross-spawn": "^6.0.5",
-    "execa": "^1.0.0",
-    "inquirer": "^6.3.1",
-    "inquirer-checkbox-plus-prompt": "^1.0.1",
-    "listr": "^0.14.3"
-  },
-  "gitHead": "339a78e80cc1e279b2776f08d82e58546333e0da"
+  }
 }
