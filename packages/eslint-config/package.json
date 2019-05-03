@@ -1,0 +1,60 @@
+{
+  "name": "@webdivision/eslint-config",
+  "version": "0.0.1",
+  "description": "ESLint and Prettier Config from WebDivision",
+  "keywords": [
+    "javascript",
+    "ecmascript",
+    "eslint",
+    "lint",
+    "config",
+    "prettier"
+  ],
+  "main": "index.js",
+  "bin": {
+    "wd": "./bin/wd-scripts.js"
+  },
+  "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
+  "author": "Konrad Turczyński <konrad@turczynski.dev>",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint-config-react-app": "4.x",
+    "eslint-config-prettier": "4.x",
+    "eslint-plugin-prettier": "3.x",
+    "eslint-plugin-react": "7.x",
+    "prettier": "1.x"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "4.x",
+    "eslint-plugin-prettier": "3.x",
+    "eslint-plugin-react": "7.x",
+    "prettier": "1.x"
+  },
+  "scripts": {
+    "format": "prettier --write '**/*.js'",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.{js,jsx}": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5",
+    "execa": "^1.0.0",
+    "inquirer": "^6.3.1",
+    "inquirer-checkbox-plus-prompt": "^1.0.1",
+    "listr": "^0.14.3"
+  }
+}
