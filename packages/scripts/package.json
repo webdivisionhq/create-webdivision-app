@@ -1,6 +1,6 @@
 {
   "name": "@webdivision/scripts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Configuration and scripts for WebDivision",
   "author": "hiredgun <turczyns@gmail.com>",
   "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
@@ -28,9 +28,9 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "yargs": "^13.2.2",
     "inquirer": "^6.3.1",
-    "listr": "^0.14.3"
+    "listr": "^0.14.3",
+    "yargs": "^13.2.2"
   },
   "bugs": {
     "url": "https://github.com/webdivisionhq/create-webdivision-app/issues"
