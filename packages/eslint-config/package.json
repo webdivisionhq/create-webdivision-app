@@ -22,13 +22,16 @@
     "eslint-config-react-app": "4.x",
     "eslint-plugin-prettier": "3.x",
     "eslint-plugin-react": "7.x",
-    "prettier": "1.x"
+    "prettier": "1.x",
+    "eslint": "5.x"
   },
   "devDependencies": {
     "eslint-config-prettier": "4.x",
+    "eslint-config-react-app": "4.x",
     "eslint-plugin-prettier": "3.x",
     "eslint-plugin-react": "7.x",
-    "prettier": "1.x"
+    "prettier": "1.x",
+    "eslint": "5.x"
   },
   "scripts": {
     "format": "prettier --write '**/*.js'",
