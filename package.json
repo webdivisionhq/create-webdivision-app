@@ -2,6 +2,10 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.13.4"
+    "lerna": "^3.13.4",
+    "prettier": "^1.17.0"
+  },
+  "scripts": {
+    "format": "npx prettier --write packages/**/*.js"
   }
 }
