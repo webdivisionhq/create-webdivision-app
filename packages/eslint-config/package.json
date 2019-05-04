@@ -18,20 +18,20 @@
   "author": "Konrad Turczyński <konrad@turczynski.dev>",
   "license": "MIT",
   "peerDependencies": {
-    "eslint": "5.x",
-    "eslint-config-prettier": "4.x",
-    "eslint-config-react-app": "4.x",
-    "eslint-plugin-prettier": "3.x",
-    "eslint-plugin-react": "7.x",
-    "prettier": "1.x"
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-react-app": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.0"
   },
   "devDependencies": {
-    "eslint": "5.x",
-    "eslint-config-prettier": "4.x",
-    "eslint-config-react-app": "4.x",
-    "eslint-plugin-prettier": "3.x",
-    "eslint-plugin-react": "7.x",
-    "prettier": "1.x"
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-react-app": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.0"
   },
   "scripts": {
     "format": "prettier --write '**/*.js'",
