@@ -1,56 +1,66 @@
 {
-  "name": "@webdivision/eslint-config",
-  "version": "0.0.8",
-  "description": "ESLint and Prettier Config from WebDivision",
-  "keywords": [
-    "javascript",
-    "ecmascript",
-    "eslint",
-    "lint",
-    "config",
-    "prettier"
-  ],
-  "main": "index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
-  "author": "Konrad Turczyński <konrad@turczynski.dev>",
-  "license": "MIT",
-  "peerDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-config-react-app": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.13.0",
-    "prettier": "^1.17.0"
-  },
-  "devDependencies": {
-    "eslint": "5.16.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-config-react-app": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.13.0",
-    "prettier": "^1.17.0"
-  },
-  "scripts": {
-    "format": "prettier --write '**/*.js'",
-    "lint": "eslint 'src/**/*.{js,jsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx}'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/**/*.{js,jsx}": [
+   "name": "@webdivision/eslint-config",
+   "version": "0.0.9",
+   "description": "ESLint and Prettier Config from WebDivision",
+   "keywords": [
+      "javascript",
+      "ecmascript",
       "eslint",
-      "git add"
-    ]
-  }
+      "lint",
+      "config",
+      "prettier"
+   ],
+   "main": "index.js",
+   "publishConfig": {
+      "access": "public"
+   },
+   "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
+   "author": "Konrad Turczyński <konrad@turczynski.dev>",
+   "license": "MIT",
+   "peerDependencies": {
+      "eslint": "^5.16.0",
+      "eslint-config-prettier": "^4.2.0",
+      "eslint-config-react-app": "^4.0.0",
+      "eslint-plugin-prettier": "^3.0.1",
+      "eslint-plugin-react": "^7.13.0",
+      "babel-eslint": "^10.0.1",
+      "eslint-plugin-flowtype": "^3.7.0",
+      "eslint-plugin-import": "^2.17.2",
+      "eslint-plugin-jsx-a11y": "^6.2.1",
+      "eslint-plugin-react-hooks": "^1.6.0",
+      "prettier": "^1.17.0"
+   },
+   "dependencies": {
+      "eslint": "5.16.0",
+      "eslint-config-prettier": "^4.2.0",
+      "eslint-config-react-app": "^4.0.0",
+      "eslint-plugin-prettier": "^3.0.1",
+      "eslint-plugin-react": "^7.13.0",
+      "eslint-plugin-flowtype": "^3.7.0",
+      "eslint-plugin-import": "^2.17.2",
+      "eslint-plugin-jsx-a11y": "^6.2.1",
+      "eslint-plugin-react-hooks": "^1.6.0",
+      "babel-eslint": "^10.0.1",
+      "prettier": "^1.17.0"
+   },
+   "scripts": {
+      "format": "prettier --write '**/*.js'",
+      "lint": "eslint 'src/**/*.{js,jsx}'",
+      "lint:fix": "eslint --fix 'src/**/*.{js,jsx}'"
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "lint-staged"
+      }
+   },
+   "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+         "prettier --write",
+         "git add"
+      ],
+      "src/**/*.{js,jsx}": [
+         "eslint",
+         "git add"
+      ]
+   }
 }
