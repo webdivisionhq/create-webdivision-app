@@ -1,11 +1,40 @@
 {
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^3.13.4",
-    "prettier": "^1.17.0"
-  },
-  "scripts": {
-    "format": "npx prettier --write packages/**/*.js"
-  }
+    "name": "root",
+    "private": true,
+    "devDependencies": {
+        "eslint": "^5.3.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-config-prettier": "^4.2.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-prettier": "^3.0.1",
+        "husky": "^2.2.0",
+        "lerna": "^3.13.4",
+        "lint-staged": "^8.1.6"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "semi": false,
+        "printWidth": 120,
+        "singleQuote": true
+    },
+    "lint-staged": {
+        "packages/scripts/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "scripts": {
+        "format": "prettier --write 'packages/scripts/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+        "lint": "eslint 'packages/scripts/**/*.{js,jsx}'",
+        "lint:fix": "eslint --fix 'packages/scripts/**/*.{js,jsx}'"
+    },
+    "dependencies": {
+        "prettier": "^1.17.0"
+    }
 }
