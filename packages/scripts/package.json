@@ -1,6 +1,6 @@
 {
   "name": "@webdivision/scripts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Configuration and scripts for WebDivision",
   "author": "hiredgun <turczyns@gmail.com>",
   "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
