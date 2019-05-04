@@ -1,40 +1,40 @@
 {
-  "name": "@webdivision/scripts",
-  "version": "0.0.8",
-  "description": "Configuration and scripts for WebDivision",
-  "author": "hiredgun <turczyns@gmail.com>",
-  "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
-  "license": "MIT",
-  "main": "lib/script.js",
-  "bin": {
-    "wd-scripts": "bin/scripts"
-  },
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "bin",
-    "lib"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webdivisionhq/create-webdivision-app.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "dependencies": {
-    "cross-spawn": "^6.0.5",
-    "inquirer": "^6.3.1",
-    "listr": "^0.14.3",
-    "yargs": "^13.2.2"
-  },
-  "bugs": {
-    "url": "https://github.com/webdivisionhq/create-webdivision-app/issues"
-  },
-  "gitHead": "339a78e80cc1e279b2776f08d82e58546333e0da"
+   "name": "@webdivision/scripts",
+   "version": "0.0.8",
+   "description": "Configuration and scripts for WebDivision",
+   "author": "hiredgun <turczyns@gmail.com>",
+   "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
+   "license": "MIT",
+   "main": "lib/script.js",
+   "bin": {
+      "wd-scripts": "bin/scripts"
+   },
+   "directories": {
+      "lib": "lib",
+      "test": "__tests__"
+   },
+   "files": [
+      "bin",
+      "lib"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webdivisionhq/create-webdivision-app.git"
+   },
+   "scripts": {
+      "test": "echo \"Error: run tests from root\" && exit 1"
+   },
+   "dependencies": {
+      "cross-spawn": "^6.0.5",
+      "inquirer": "^6.3.1",
+      "listr": "^0.14.3",
+      "yargs": "^13.2.2"
+   },
+   "bugs": {
+      "url": "https://github.com/webdivisionhq/create-webdivision-app/issues"
+   },
+   "gitHead": "339a78e80cc1e279b2776f08d82e58546333e0da"
 }

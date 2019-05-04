@@ -1,24 +1,24 @@
-const factory = require('yargs/yargs')
-const script = require('./index')
+const factory = require('yargs/yargs');
+const script = require('./script');
 
 function cli(cwd) {
-  const parser = factory(null, cwd)
+   const parser = factory(null, cwd);
 
-  parser.alias('h', 'help')
-  parser.alias('v', 'version')
+   parser.alias('h', 'help');
+   parser.alias('v', 'version');
 
-  parser.usage(
-    '$0',
-    'TODO: description',
-    yargs => {
-      yargs.options({
-        // TODO: options
-      })
-    },
-    argv => script(argv)
-  )
+   parser.usage(
+      '$0',
+      'TODO: description',
+      yargs => {
+         yargs.options({
+            // TODO: options
+         });
+      },
+      argv => script(argv)
+   );
 
-  return parser
+   return parser;
 }
 
-module.exports = cli
+module.exports = cli;
