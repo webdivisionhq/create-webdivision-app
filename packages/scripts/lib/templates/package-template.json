@@ -10,13 +10,18 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"],
     "src/**/*.{js,jsx}": ["eslint", "git add"]
   },
   "eslintConfig": {
     "extends": "@webdivision"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "trailingComma": "es5",
+    "tabWidth": 3,
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": true
   }
 }
