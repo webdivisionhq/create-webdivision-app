@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const Listr = require('listr');
 const tasksColl = require('./tasks');
 const u = require('./utils');
 
@@ -25,8 +26,14 @@ async function script({ verbose }) {
 
    u.checkIfPackageJSONExists();
 
-   tasks.forEach(task => {
-      tasksColl[task]({ verbose });
+   const jobs = new Listr(
+      tasks.map(task => {
+         return tasksColl[task]({ verbose });
+      })
+   );
+
+   jobs.run().catch(err => {
+      console.error(err);
    });
 }
 

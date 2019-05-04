@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { onExit, readableToString } = require('@rauschma/stringio');
 const path = require('path');
 const os = require('os');
 const spawn = require('cross-spawn');
@@ -26,14 +27,16 @@ function logError(msg, proc, verbose) {
    }
 }
 
-exports.install = (packages, { verbose }) => {
+exports.install = async (packages, { verbose }) => {
    const pkgs = [].concat(packages);
+   const proc = spawn(pkgCommand, [...defaultArgs, ...pkgs]);
 
-   const proc = spawn.sync(pkgCommand, [...defaultArgs, ...pkgs], {
-      ...(verbose && { stdio: 'inherit' }),
-   });
+   if (verbose) {
+      readableToString(proc.stderr).then(output => console.log('proc.stderr', output));
+      readableToString(proc.stdout).then(output => console.log('proc.stdout', output));
+   }
 
-   logError(`${pkgs.join(',')} installation failed`, proc, verbose);
+   await onExit(proc);
 };
 
 exports.installPeerDeps = (pkg, { verbose }) => {
