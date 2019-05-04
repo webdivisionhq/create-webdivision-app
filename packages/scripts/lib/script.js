@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+// const logSymbols = require('log-symbols');
+// const logUpdate = require('log-update');
+// const ora = require('ora');
 const packageTemplate = require('./templates/package-template');
 const u = require('./utils');
 
@@ -10,18 +13,18 @@ async function script() {
    const { tasks } = await inquirer.prompt({
       type: 'checkbox',
       name: 'tasks',
-      message: 'What you want to do?',
+      message: 'What do you want to do?',
       choices: [
          {
-            name: 'Install eslint+prettier',
+            name: 'Set up Eslint & Prettier',
             value: 'eslint',
          },
          {
-            name: 'Set up lint-staged',
+            name: 'Set up lint-staged & husky',
             value: 'lintstaged',
          },
          {
-            name: 'Set lint-scripts',
+            name: 'Add lint scripts',
             value: 'scripts',
          },
       ],
@@ -34,9 +37,10 @@ async function script() {
    u.checkIfPackageJSONExists();
 
    if (tasks.includes('eslint')) {
-      u.install('@webdivision/eslint-config', 'install-peerdeps');
-      u.installPeerDeps('@webdivision/eslint-config');
-      u.installPeerDeps('eslint-config-react-app');
+      u.install('@webdivision/eslint-config');
+      // u.install('install-peerdeps');
+      // u.installPeerDeps('@webdivision/eslint-config');
+      // u.installPeerDeps('eslint-config-react-app');
 
       const appPackage = u.readPackageJSON();
 

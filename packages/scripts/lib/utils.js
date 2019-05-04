@@ -11,10 +11,10 @@ let defaultArgs;
 
 if (useYarn) {
    pkgCommand = 'yarn';
-   defaultArgs = ['add', '--dev', '--exact'];
+   defaultArgs = ['add', '--dev', '--exact', '--silent'];
 } else {
    pkgCommand = 'npm';
-   defaultArgs = ['install', '--save-exact', '-D'];
+   defaultArgs = ['install', '--save-exact', '-D', '-s'];
 }
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
       }
    },
    installPeerDeps(pkg) {
-      const proc = spawn.sync(path.resolve(BIN_DIR, 'install-peerdeps'), ['-d', pkg], {
+      const proc = spawn.sync(path.resolve(BIN_DIR, 'install-peerdeps'), ['-d', pkg, useYarn && '-Y'].filter(e => e), {
          stdio: 'inherit',
       });
       if (proc.status !== 0) {
