@@ -1,6 +1,10 @@
 const factory = require('yargs/yargs');
 const script = require('./script');
 
+process.on('unhandledRejection', err => {
+   throw err;
+});
+
 function cli(cwd) {
    const parser = factory(null, cwd);
 
@@ -9,13 +13,19 @@ function cli(cwd) {
 
    parser.usage(
       '$0',
-      'TODO: description',
+      'WebDivision scripts',
       yargs => {
          yargs.options({
-            // TODO: options
+            verbose: {
+               describe: 'enable verbose mode',
+            },
          });
       },
-      argv => script(argv)
+      argv => {
+         script(argv).catch(e => {
+            console.error(e);
+         });
+      }
    );
 
    return parser;
