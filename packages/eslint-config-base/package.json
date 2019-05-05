@@ -1,0 +1,15 @@
+{
+   "name": "@webdivision/eslint-config-base",
+   "version": "0.0.9",
+   "description": "WebDivision base eslint config",
+   "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
+   "license": "MIT",
+   "main": "index.js",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webdivisionhq/create-webdivision-app.git"
+   },
+   "bugs": {
+      "url": "https://github.com/webdivisionhq/create-webdivision-app/issues"
+   }
+}
