@@ -5,14 +5,18 @@ const packageTemplate = require('./templates/package-template');
 // const ora = require('ora');
 const u = require('./utils');
 
-exports.eslint = ({ verbose }) => ({
+exports.eslint = ({ verbose, projType }) => ({
    title: 'Setting up eslint & prettier',
    task: () =>
       new Listr([
          {
-            title: 'Installing @webdivision/eslint-config',
+            title: `Installing @webdivision/eslint-config${projType === 'react' ? '-react' : ''}`,
             task: async () => {
-               await u.install('@webdivision/eslint-config', { verbose });
+               let config = '@webdivision/eslint-config';
+               if (projType === 'react') {
+                  config += '-react';
+               }
+               await u.install(config, { verbose });
             },
          },
          {
@@ -20,7 +24,7 @@ exports.eslint = ({ verbose }) => ({
             task: async () => {
                const appPackage = u.readPackageJSON();
 
-               appPackage.eslintConfig = packageTemplate.eslintConfig;
+               appPackage.eslintConfig = { extends: `@webdivision${projType === 'react' ? '/react' : ''}` };
 
                u.updatePackageJSON(appPackage);
             },
@@ -67,7 +71,7 @@ exports.scripts = () => ({
 exports.lintstaged = () => ({
    title: 'Setting up lint-staged',
    task: async (_, task) => {
-      await u.install('husky', 'lint-staged');
+      await u.install(['husky', 'lint-staged']);
 
       const appPackage = u.readPackageJSON();
 

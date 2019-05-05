@@ -4,6 +4,22 @@ const tasksColl = require('./tasks');
 const u = require('./utils');
 
 async function script({ verbose }) {
+   const { projType } = await inquirer.prompt({
+      type: 'list',
+      name: 'projType',
+      message: 'Select project type',
+      choices: [
+         {
+            name: 'Frontend (React)',
+            value: 'react',
+         },
+         {
+            name: 'Backend',
+            value: 'node',
+         },
+      ],
+   });
+
    const { tasks } = await inquirer.prompt({
       type: 'checkbox',
       name: 'tasks',
@@ -28,7 +44,7 @@ async function script({ verbose }) {
 
    const jobs = new Listr(
       tasks.map(task => {
-         return tasksColl[task]({ verbose });
+         return tasksColl[task]({ verbose, projType });
       })
    );
 

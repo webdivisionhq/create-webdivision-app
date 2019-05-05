@@ -27,7 +27,7 @@ function logError(msg, proc, verbose) {
    }
 }
 
-exports.install = async (packages, { verbose }) => {
+exports.install = async (packages, { verbose } = {}) => {
    const pkgs = [].concat(packages);
    const proc = spawn(pkgCommand, [...defaultArgs, ...pkgs]);
 
@@ -39,7 +39,7 @@ exports.install = async (packages, { verbose }) => {
    await onExit(proc);
 };
 
-exports.installPeerDeps = (pkg, { verbose }) => {
+exports.installPeerDeps = (pkg, { verbose } = {}) => {
    const proc = spawn.sync(path.resolve(BIN_DIR, 'install-peerdeps'), ['-d', pkg, useYarn && '-Y'].filter(Boolean), {
       ...(verbose && { stdio: 'inherit' }),
    });
