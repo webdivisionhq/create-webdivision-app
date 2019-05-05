@@ -2,6 +2,43 @@
    "name": "root",
    "private": true,
    "devDependencies": {
-      "lerna": "^3.13.4"
+      "@webdivision/eslint-config": "0.0.11",
+      "husky": "2.2.0",
+      "lerna": "^3.13.4",
+      "lint-staged": "8.1.6"
+   },
+   "eslintConfig": {
+      "extends": "@webdivision",
+      "rules": {
+         "no-console": "off"
+      }
+   },
+   "prettier": {
+      "endOfLine": "lf",
+      "trailingComma": "es5",
+      "tabWidth": 3,
+      "printWidth": 120,
+      "singleQuote": true,
+      "semi": true
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "lint-staged"
+      }
+   },
+   "lint-staged": {
+      "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+         "prettier --write",
+         "git add"
+      ],
+      "**/*.{js,jsx}": [
+         "eslint",
+         "git add"
+      ]
+   },
+   "scripts": {
+      "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+      "lint": "eslint '**/*.{js,jsx}'",
+      "lint:fix": "eslint --fix '**/*.{js,jsx}'"
    }
 }

@@ -1,8 +1,5 @@
 const Listr = require('listr');
 const packageTemplate = require('./templates/package-template');
-// const logSymbols = require('log-symbols');
-// const logUpdate = require('log-update');
-// const ora = require('ora');
 const u = require('./utils');
 
 exports.eslint = ({ verbose, projType }) => ({
@@ -21,7 +18,7 @@ exports.eslint = ({ verbose, projType }) => ({
          },
          {
             title: 'Configuring eslint inside package.json',
-            task: async () => {
+            task: () => {
                const appPackage = u.readPackageJSON();
 
                appPackage.eslintConfig = { extends: `@webdivision${projType === 'react' ? '/react' : ''}` };
@@ -31,7 +28,7 @@ exports.eslint = ({ verbose, projType }) => ({
          },
          {
             title: 'Configuring prettier inside package.json',
-            task: async () => {
+            task: () => {
                const appPackage = u.readPackageJSON();
 
                appPackage.prettier = packageTemplate.prettier;

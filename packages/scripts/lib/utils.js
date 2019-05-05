@@ -1,14 +1,13 @@
 const fs = require('fs');
-const { onExit, readableToString } = require('@rauschma/stringio');
 const path = require('path');
 const os = require('os');
+const { onExit, readableToString } = require('@rauschma/stringio');
 const spawn = require('cross-spawn');
 const { PACKAGE_JSON_FILE, BIN_DIR, YARN_LOCK_FILE } = require('./config');
 
 const useYarn = fs.existsSync(YARN_LOCK_FILE);
 
-let pkgCommand;
-let defaultArgs;
+let pkgCommand, defaultArgs;
 
 if (useYarn) {
    pkgCommand = 'yarn';

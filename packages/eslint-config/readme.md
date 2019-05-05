@@ -4,11 +4,11 @@ This repository was forked from [eslint-config-wesbos](https://github.com/webdiv
 
 ## What it does
 
-- Lints JavaScript based on the latest standards
-- Fixes issues and formatting errors with Prettier
-- Lints + Fixes inside of html script tags
-- Lints + Fixes React via eslint-config-airbnb
-- You can see all the [rules here](https://github.com/webdivisionhq/eslint-config-webdivision/blob/master/.eslintrc.js)
+-  Lints JavaScript based on the latest standards
+-  Fixes issues and formatting errors with Prettier
+-  Lints + Fixes inside of html script tags
+-  Lints + Fixes React via eslint-config-airbnb
+-  You can see all the [rules here](https://github.com/webdivisionhq/eslint-config-webdivision/blob/master/.eslintrc.js)
 
 ## Installing
 
@@ -32,7 +32,7 @@ npx install-peerdeps --dev @webdivision/eslint-config
 
 ```json
 {
-  "extends": ["webdivision"]
+   "extends": ["webdivision"]
 }
 ```
 
@@ -63,14 +63,14 @@ npx install-peerdeps --global @webdivision/eslint-config
 
 ESLint will look for one in your home directory
 
-- `~/.eslintrc` for mac
-- `C:\Users\username\.eslintrc` for windows
+-  `~/.eslintrc` for mac
+-  `C:\Users\username\.eslintrc` for windows
 
 In your `.eslintrc` file, it should look like this:
 
 ```json
 {
-  "extends": ["@webdivision"]
+   "extends": ["@webdivision"]
 }
 ```
 
