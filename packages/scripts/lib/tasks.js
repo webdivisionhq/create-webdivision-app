@@ -1,3 +1,4 @@
+const Listr = require('listr');
 const packageTemplate = require('./templates/package-template');
 // const logSymbols = require('log-symbols');
 // const logUpdate = require('log-update');
@@ -5,17 +6,36 @@ const packageTemplate = require('./templates/package-template');
 const u = require('./utils');
 
 exports.eslint = ({ verbose }) => ({
-   title: 'Installing @webdivision/eslint-config',
-   task: async () => {
-      await u.install('@webdivision/eslint-config', { verbose });
+   title: 'Setting up eslint & prettier',
+   task: () =>
+      new Listr([
+         {
+            title: 'Installing @webdivision/eslint-config',
+            task: async () => {
+               await u.install('@webdivision/eslint-config', { verbose });
+            },
+         },
+         {
+            title: 'Configuring eslint inside package.json',
+            task: async () => {
+               const appPackage = u.readPackageJSON();
 
-      const appPackage = u.readPackageJSON();
+               appPackage.eslintConfig = packageTemplate.eslintConfig;
 
-      appPackage.eslintConfig = packageTemplate.eslintConfig;
-      appPackage.prettier = packageTemplate.prettier;
+               u.updatePackageJSON(appPackage);
+            },
+         },
+         {
+            title: 'Configuring prettier inside package.json',
+            task: async () => {
+               const appPackage = u.readPackageJSON();
 
-      u.updatePackageJSON(appPackage);
-   },
+               appPackage.prettier = packageTemplate.prettier;
+
+               u.updatePackageJSON(appPackage);
+            },
+         },
+      ]),
 });
 
 exports.scripts = () => ({
