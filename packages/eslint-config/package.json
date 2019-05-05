@@ -1,6 +1,6 @@
 {
    "name": "@webdivision/eslint-config",
-   "version": "0.0.9",
+   "version": "0.0.10",
    "description": "ESLint and Prettier Config from WebDivision",
    "keywords": [
       "javascript",
@@ -18,8 +18,8 @@
    "author": "Konrad Turczyński <konrad@turczynski.dev>",
    "license": "MIT",
    "dependencies": {
-      "eslint": ">=5",
       "babel-plugin-module-resolver": "^3.2.0",
+      "eslint": ">=5",
       "eslint-config-kentcdodds": "^14.3.2",
       "eslint-config-prettier": "^4.2.0",
       "eslint-plugin-prettier": "^3.0.1",
