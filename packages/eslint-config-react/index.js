@@ -2,7 +2,8 @@ module.exports = {
    extends: [
       'kentcdodds',
       'kentcdodds/jest',
-      'plugin:react/recommended',
+      'kentcdodds/react',
+      'kentcdodds/jsx-a11y',
       'plugin:prettier/recommended',
       'prettier/react',
    ],
