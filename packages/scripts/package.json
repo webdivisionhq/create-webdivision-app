@@ -2,21 +2,12 @@
    "name": "@webdivision/scripts",
    "version": "0.0.11",
    "description": "Configuration and scripts for WebDivision",
-   "author": "hiredgun <turczyns@gmail.com>",
    "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
    "license": "MIT",
    "main": "lib/script.js",
    "bin": {
       "wd-scripts": "bin/scripts"
    },
-   "directories": {
-      "lib": "lib",
-      "test": "__tests__"
-   },
-   "files": [
-      "bin",
-      "lib"
-   ],
    "publishConfig": {
       "access": "public"
    },

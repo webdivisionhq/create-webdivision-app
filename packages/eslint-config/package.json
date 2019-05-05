@@ -2,20 +2,11 @@
    "name": "@webdivision/eslint-config",
    "version": "0.0.11",
    "description": "ESLint and Prettier Config from WebDivision",
-   "keywords": [
-      "javascript",
-      "ecmascript",
-      "eslint",
-      "lint",
-      "config",
-      "prettier"
-   ],
    "main": "index.js",
    "publishConfig": {
       "access": "public"
    },
    "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
-   "author": "Konrad Turczyński <konrad@turczynski.dev>",
    "license": "MIT",
    "dependencies": {
       "babel-plugin-module-resolver": "^3.2.0",
@@ -29,20 +20,5 @@
       "format": "prettier --write '**/*.js'",
       "lint": "eslint 'src/**/*.{js,jsx}'",
       "lint:fix": "eslint --fix 'src/**/*.{js,jsx}'"
-   },
-   "husky": {
-      "hooks": {
-         "pre-commit": "lint-staged"
-      }
-   },
-   "lint-staged": {
-      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-         "prettier --write",
-         "git add"
-      ],
-      "src/**/*.{js,jsx}": [
-         "eslint",
-         "git add"
-      ]
    }
 }
