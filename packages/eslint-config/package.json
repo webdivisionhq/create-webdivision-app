@@ -11,10 +11,12 @@
    "dependencies": {
       "babel-plugin-module-resolver": "^3.2.0",
       "eslint": ">=5",
-      "eslint-config-kentcdodds": "^14.3.2",
       "eslint-config-prettier": "^4.2.0",
       "eslint-plugin-prettier": "^3.0.1",
       "prettier": "^1.17.0"
+   },
+   "peerDependencies": {
+      "eslint-config-kentcdodds": "^14.3.2"
    },
    "scripts": {
       "format": "prettier --write '**/*.js'",
