@@ -17,6 +17,13 @@ exports.eslint = ({ verbose, projType }) => ({
             },
          },
          {
+            title: `Installing peer deps`,
+            task: async () => {
+               // TODO this is temporary, fix auto peer deps installing
+               await u.install('eslint-config-kentcdodds', { verbose });
+            },
+         },
+         {
             title: 'Configuring eslint inside package.json',
             task: () => {
                const appPackage = u.readPackageJSON();
