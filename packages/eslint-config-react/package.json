@@ -1,6 +1,6 @@
 {
    "name": "@webdivision/eslint-config-react",
-   "version": "0.0.11",
+   "version": "0.0.12",
    "description": "Eslint config for React APPs",
    "main": "index.js",
    "publishConfig": {
@@ -9,6 +9,6 @@
    "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
    "license": "MIT",
    "dependencies": {
-      "@webdivision/eslint-config": "^0.0.11"
+      "@webdivision/eslint-config": "^0.0.12"
    }
 }
