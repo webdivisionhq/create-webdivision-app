@@ -1,6 +1,6 @@
 {
    "name": "@webdivision/scripts",
-   "version": "0.0.14-alpha.0",
+   "version": "0.0.14-alpha.1",
    "description": "Configuration and scripts for WebDivision",
    "homepage": "https://github.com/webdivisionhq/create-webdivision-app#readme",
    "license": "MIT",
