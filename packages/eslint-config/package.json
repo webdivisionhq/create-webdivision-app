@@ -1,6 +1,6 @@
 {
    "name": "@webdivision/eslint-config",
-   "version": "0.0.13",
+   "version": "0.0.14-alpha.0",
    "description": "ESLint and Prettier Config from WebDivision",
    "main": "index.js",
    "publishConfig": {
