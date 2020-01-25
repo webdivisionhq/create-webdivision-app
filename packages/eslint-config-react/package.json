@@ -9,6 +9,6 @@
    "repository": "git@github.com:webdivisionhq/eslint-config-webdivision.git",
    "license": "MIT",
    "dependencies": {
-      "@webdivision/eslint-config": "^0.0.14"
+      "@webdivision/eslint-config": "^0.0.14-alpha.0"
    }
 }
